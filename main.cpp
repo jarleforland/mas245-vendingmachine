@@ -1,8 +1,9 @@
+
 #include <cstdlib>              // Exit codes for main.
 #include <iostream>             // std::cout
 
-#include <soda.h>               // Include Soda class header (makes class declaration visible).
-#include <vendingmachine.h>     // Include VendingMachine clase header (makes class declaration visible).
+#include "soda.h"               // Include Soda class header (makes class declaration visible).
+#include "vendingmachine.h"     // Include VendingMachine clase header (makes class declaration visible).
 
 
 // This is a C++ style comment. Compiler will ignore all comments.
@@ -12,9 +13,9 @@
 int main()
 {
     // Print a message at startup.
-
+    std::cout<<"starting up"<<std::endl;
     // Create vendingMachine object. Constructor will be called with no parameters.
-    VendingMachine vendingMachine;
+    VendingMachine vendingMachine ("Ett jævla fittetryne");
     // Print inventory using public printInventory member function (method).
     vendingMachine.printInventory();
 
@@ -22,12 +23,13 @@ int main()
     // Create a cola object. Constructor will be called with given parameters.
     Soda cola("Colabrus", 34, 4);
     // We have a variable named cola with Soda as its data type.
-
+    Soda fanta ("fanta",34,1);
     // Call the VendingMachine addType function with cola variable as parameter.
     vendingMachine.addType(cola);
+    vendingMachine.addType(fanta);
     // Print inventory using public printInventory member function (method).
     vendingMachine.printInventory();
-
+    vendingMachine.printOwner();
 
 
     // Print a message just before exiting.

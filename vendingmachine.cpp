@@ -1,10 +1,10 @@
 #include "vendingmachine.h" // Includes the header file for this class for class declaration visibility.
 #include <iostream>
-
+#include <string>
 
 // Definition of VendingMachine constructor.
-VendingMachine::VendingMachine()
-    : sodaTypes_()  // Initialization of sodaTypes_ vector. Explicit call to the constructor.
+VendingMachine::VendingMachine(const std::string& owner)
+    : sodaTypes_(), owner_(owner)  // Initialize the owner member variable.
 {
     std::cout << "Vending machine object constructed!" << std::endl;
 }
@@ -29,3 +29,14 @@ void VendingMachine::printInventory()
 {
     std::cout << "Number of soda types registered: " << sodaTypes_.size() << std::endl;
 }
+void VendingMachine::printOwner() const
+{
+ std::cout<<owner_ <<" owns this machine"<<std::endl;
+
+}
+
+
+
+
+
+
